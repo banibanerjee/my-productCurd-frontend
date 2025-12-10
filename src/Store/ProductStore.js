@@ -10,7 +10,9 @@ export const useProductStore = create((set) => ({
   fetchProducts: async () => {
     set({ loading: true, error: null });
     try {
-      const response = await axios.get(`${BASE_URL}/api/products/all`);
+      const response = await axios.get(`${BASE_URL}/api/products/all`, {
+        withCredentials: true
+      });
       set({ products: response.data, loading: false });
     } catch (err) {
       set({ error: err.message, loading: false });
