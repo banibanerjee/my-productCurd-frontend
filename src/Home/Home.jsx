@@ -158,49 +158,55 @@ const styles = {
   bannerContainer: {
     position: "relative",
     width: "100%",
-    height: "350px",
+    height: "250px",
     overflow: "hidden",
-    marginTop: "80px", 
-    marginBottom: "30px",
+    marginTop: "60px",
   },
+
   bannerImage: {
     width: "100%",
     height: "100%",
-    objectFit: "contain", 
-    background: "#f5f5f5",
-    transition: "opacity 0.5s ease-in-out",
+    objectFit: "cover",
   },
+
   productGrid: {
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "center",
-    padding: 20,
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+    gap: "15px",
+    padding: "20px",
   },
+
   card: {
     background: "#fff",
-    border: "1px solid #ddd",
     borderRadius: 8,
-    width: 250,
-    margin: 15,
+    border: "1px solid #ddd",
     padding: 15,
-    boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
     textAlign: "center",
     cursor: "pointer",
   },
+
   image: {
     width: "100%",
-    height: 180,
+    height: 150,
     objectFit: "cover",
     borderRadius: 5,
   },
+
   addButton: {
     marginTop: 10,
-    padding: "10px 20px",
+    padding: "10px",
     background: "#1976d2",
-    color: "#fff",
+    color: "white",
     border: "none",
     borderRadius: 4,
-    cursor: "pointer",
+    width: "100%",
+  },
+
+  /* MOBILE FIXES */
+  "@media (max-width:480px)": {
+    bannerContainer: { height: "180px" },
+    image: { height: 120 },
+    addButton: { padding: "8px" },
   },
 };
 
